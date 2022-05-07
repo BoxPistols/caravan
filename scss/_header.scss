@@ -1,44 +1,30 @@
 // フォントデザイニング
-h1 >a, header, nav, h2, .main-visual, footer {
+h1 >a, header, nav, h2, footer {
   font-family:"Quicksand", sans-serif;
 }
 
-// header {
-//   position:relative;
-//   width:90%;
-//   /* 横幅90% */
-//   margin:0 auto;
-//   padding:15px 0;
+h1 {
+  font-size:calc(1.25em + 1.5vw);
 
-//   text-align:center;
-// }
+  a {
+    // color:var(--text-color);
+    color:var(--bs-gray-900);
+  }
+}
 
+// icons
 .social i {
   display:inline-block;
   margin-left:20px;
 }
 
-.social {
-  // position:absolute;
-  top:22px;
-  right:22px;
-}
+// Nav
+.nav-item {
+  padding:0 1rem;
 
-header .heading {
-  /* headerタグ内のheadingクラスにのみ反映される */
-  font-size:32px;
-}
+  font-size:1.05rem;
 
-.nav-list {
-  margin:0 auto;
-  padding:10px 0;
-
-  text-align:center;
-}
-
-.nav-list-item {
-  display:inline-block;
-  margin:0 20px;
-
-  list-style:none;
+  a:not(.active) {
+    color:currentColor;
+  }
 }

@@ -1,28 +1,35 @@
 .main-visual {
-  width:100%; /* 横幅いっぱい */
-  height:300px; /* 高さ300px */
+  height:100%;
+  max-height:300px;
 
   background-image:url(img/mv.jpg);
-  background-position:center; /* 背景画像を中央に配置 */
-  background-size:cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
-}
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:cover;
 
-.main-visual-content {
-  width:40%; /* 横幅40% */
-  height:300px; /* 親の高さに揃える */
-  padding-top:105px; /* 上側の内側余白で垂直方向の位置を調整 */
+  &-text {
+    text-shadow:0 0 2px rgba(0, 0, 0, .7);
+    font-size:1.1rem;
+  }
+  small {
+    font-size:.85rem;
+  }
 
-  text-align:center; /* 文字を中央揃えにする */
+  &-content {
+    width:100%;
+    height:fit-content;
+    padding:4% 4% 2%;
 
-  background-color:rgba(0, 0, 0, .5); /* 背景色を半透明の黒にする */
-}
+    background:linear-gradient(
+    rgba(1, 178, 218, .3),
+    rgba(250, 28, 235, .3)
+    );
 
-.main-visual-text {
-  color:#fff; /* 文字色を白に変更 */
-}
-
-.main-visual-name {
-  margin-top:30px; /* 上側の外側の余白 */
-
-  color:#fff; /* 文字色を白に変更 */
+    @include media-breakpoint-up(sm) {
+      flex-direction:initial;
+      width:40%;
+      height:300px;
+      padding:auto;
+    }
+  }
 }

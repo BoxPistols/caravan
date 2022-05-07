@@ -12481,28 +12481,22 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-/* 汎用CSS変数　*/
-:root {
-  --text-color:#6c6b6b;
-}
-
 /* リセット */
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: var(--text-color);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  color: var(--bs-gray-700);
   font-family: "Inter", "Noto Sans JP", sans-serif;
 }
 
 a {
   text-decoration: none;
-}
-
-.col, div[class*=col-] {
-  border: 1px solid rgba(0, 128, 128, 0.2);
-  background-color: rgba(204, 204, 204, 0.1);
 }
 
 .u-sp__flex-riverse-column {
@@ -12650,8 +12644,15 @@ a {
   background-image: url(img/road.jpg);
 }
 
-h1 > a, .h1 > a, header, nav, h2, .h2, .main-visual, footer {
+h1 > a, .h1 > a, header, nav, h2, .h2, footer {
   font-family: "Quicksand", sans-serif;
+}
+
+h1, .h1 {
+  font-size: calc(1.25em + 1.5vw);
+}
+h1 a, .h1 a {
+  color: var(--bs-gray-900);
 }
 
 .social i {
@@ -12659,26 +12660,12 @@ h1 > a, .h1 > a, header, nav, h2, .h2, .main-visual, footer {
   margin-left: 20px;
 }
 
-.social {
-  top: 22px;
-  right: 22px;
+.nav-item {
+  padding: 0 1rem;
+  font-size: 1.05rem;
 }
-
-header .heading {
-  /* headerタグ内のheadingクラスにのみ反映される */
-  font-size: 32px;
-}
-
-.nav-list {
-  margin: 0 auto;
-  padding: 10px 0;
-  text-align: center;
-}
-
-.nav-list-item {
-  display: inline-block;
-  margin: 0 20px;
-  list-style: none;
+.nav-item a:not(.active) {
+  color: currentColor;
 }
 
 .custom-container {
@@ -12722,40 +12709,39 @@ footer {
 }
 
 .main-visual {
-  width: 100%;
-  /* 横幅いっぱい */
-  height: 300px;
-  /* 高さ300px */
+  height: 100%;
+  max-height: 300px;
   background-image: url(img/mv.jpg);
+  background-repeat: no-repeat;
   background-position: center;
-  /* 背景画像を中央に配置 */
   background-size: cover;
-  /* 縦横比を維持したまま背景領域を埋め尽くす */
 }
-
-.main-visual-content {
-  width: 40%;
-  /* 横幅40% */
-  height: 300px;
-  /* 親の高さに揃える */
-  padding-top: 105px;
-  /* 上側の内側余白で垂直方向の位置を調整 */
-  text-align: center;
-  /* 文字を中央揃えにする */
-  background-color: rgba(0, 0, 0, 0.5);
-  /* 背景色を半透明の黒にする */
-}
-
 .main-visual-text {
-  color: #fff;
-  /* 文字色を白に変更 */
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+  font-size: 1.1rem;
 }
-
-.main-visual-name {
-  margin-top: 30px;
-  /* 上側の外側の余白 */
-  color: #fff;
-  /* 文字色を白に変更 */
+.main-visual small, .main-visual .small {
+  font-size: 0.85rem;
+}
+.main-visual-content {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 4% 4% 2%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 178, 218, 0.3)), to(rgba(250, 28, 235, 0.3)));
+  background: linear-gradient(rgba(1, 178, 218, 0.3), rgba(250, 28, 235, 0.3));
+}
+@media (min-width: 576px) {
+  .main-visual-content {
+    -webkit-box-orient: initial;
+    -webkit-box-direction: initial;
+        -ms-flex-direction: initial;
+            flex-direction: initial;
+    width: 40%;
+    height: 300px;
+    padding: auto;
+  }
 }
 
 .pagination {

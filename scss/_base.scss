@@ -1,26 +1,23 @@
-/* 汎用CSS変数　*/
-:root {
-  // Color
-  --text-color:#6c6b6b;
-}
-
 /* リセット */
 * {
   box-sizing:border-box;
   margin:0;
   padding:0;
+}
 
-  color:var(--text-color);
+body {
+  -webkit-font-smoothing:antialiased;
+
+  color:var(--bs-gray-700);
 
   font-family:"Inter", "Noto Sans JP", sans-serif;
 }
-
 a {
   text-decoration:none;
 }
 
 // !TEST: all-layout
-.col, div[class*="col-"] {
-  border:1px solid rgba(0, 128, 128, .2);
-  background-color:rgba(204, 204, 204, .1);
-}
+// .col, div[class*="col-"] {
+//   border:1px solid rgba(0, 128, 128, .1);
+//   background-color:rgba(#fcfcfc, .1);
+// }
