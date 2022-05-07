@@ -1,15 +1,17 @@
-header, nav, h2, .main-visual, footer {
-  font-family:Chalkduster, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+// フォントデザイニング
+h1 >a, header, nav, h2, .main-visual, footer {
+  font-family:"Quicksand", sans-serif;
 }
 
-header {
-  position:relative;
-  width:90%; /* 横幅90% */
-  margin:0 auto;
-  padding:15px 0;
+// header {
+//   position:relative;
+//   width:90%;
+//   /* 横幅90% */
+//   margin:0 auto;
+//   padding:15px 0;
 
-  text-align:center;
-}
+//   text-align:center;
+// }
 
 .social i {
   display:inline-block;
@@ -17,7 +19,7 @@ header {
 }
 
 .social {
-  position:absolute;
+  // position:absolute;
   top:22px;
   right:22px;
 }

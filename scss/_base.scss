@@ -1,12 +1,26 @@
-/* ブラウザがそれぞれ持っているCSSをリセットするための記述 */
+/* 汎用CSS変数　*/
+:root {
+  // Color
+  --text-color:#6c6b6b;
+}
+
+/* リセット */
 * {
   box-sizing:border-box;
   margin:0;
   padding:0;
 
-  color:#6c6b6b;
+  color:var(--text-color);
+
+  font-family:"Inter", "Noto Sans JP", sans-serif;
 }
 
 a {
   text-decoration:none;
+}
+
+// !TEST: all-layout
+.col, div[class*="col-"] {
+  border:1px solid rgba(0, 128, 128, .2);
+  background-color:rgba(204, 204, 204, .1);
 }

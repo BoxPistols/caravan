@@ -1,0 +1,18 @@
+// リバース on Mobile
+.u-sp__flex-riverse {
+  &-column {
+    flex-direction:column-reverse;
+
+    @include media-breakpoint-up(sm) {
+      flex-direction:initial;
+    }
+  }
+
+  &-row {
+    flex-direction:row-reverse;
+
+    @include media-breakpoint-up(sm) {
+      flex-direction:initial;
+    }
+  }
+}
