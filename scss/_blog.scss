@@ -1,123 +1,191 @@
 // 共通見出しデザイン
+
+@mixin bold-border {
+  border-bottom:8px solid var(--bs-gray-400);
+}
 .common-heading {
   text-align:center;
 
-  border-bottom:8px solid #f7f7f7;
-
   line-height:.6;
+
+  @include bold-border;
+}
+
+main.main {
+  margin:0;
+
+  @include media-breakpoint-up(sm) {
+    margin-right:40px;
+  }
 }
 
 // Blog
 .blog {
-  width:540px;
-  margin-right:30px;
-  /* 領域の右側余白 */
-}
+  @include media-breakpoint-up(sm) {
+    width:auto;
+    // max-width:100%;
+  }
+  &-wrap {
+    width:100%;
+    max-width:1280px;
+    margin:0 auto;
+    padding:60px 20px 30px;
+  }
 
-.blog-heading {
-  text-align:center;
+  &-heading {
+    line-height:.6;
 
-  border-bottom:8px solid #f7f7f7;
+    @include bold-border;
+  }
 
-  line-height:.6;
-}
+  &-box {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 
-.blog-box {
-  padding-top:50px;
-}
+    @include media-breakpoint-up(sm) {
+      display:block;
+      padding-top:20px;
+    }
+  }
 
-.blog-item {
-  display:flex;
-  justify-content:flex-start;
-  margin-bottom:20px;
-  padding-bottom:20px;
+  &-item {
+    margin:auto;
+    padding:20px 4px;
 
-  border-bottom:1px solid #f7f7f7;
-}
+    border-bottom:1px solid var(--bs-gray-300);
 
-.blog-image {
-  height:180px;
-}
+    @include media-breakpoint-up(sm) {
+      margin:0;
+      margin-bottom:12px;
+    }
+  }
+  &-image {
+    max-width:280px;
+    max-height:200px;
+  }
+  img {
+    width:auto;
+    max-width:100%;
 
-.blog-text {
-  padding:25px 0 0 30px;
-}
+    aspect-ratio:5/3;
+  }
+  // }
 
-.blog-text-heading {
-  padding-bottom:15px;
-}
+  &-text {
+    min-width:auto;
+    padding:20px 0 0 0;
 
-.blog-date {
-  display:inline-block;
+    @include media-breakpoint-up(sm) {
+      min-width:230px;
+      padding:20px 0 0 20px;
+    }
 
-  font-size:12px;
+    a {
+      color:var(--bs-gray-700);
+      &:hover {
+        color:var(--bs-primary);
+      }
+    }
+  }
+
+  &-text-heading {
+    padding-bottom:15px;
+
+    font-size:18px;
+
+    @include media-breakpoint-up(sm) {
+      font-size:24px;
+    }
+  }
+
+  &-date {
+    display:inline-block;
+
+    font-size:12px;
+  }
 }
 
 .category {
   display:inline-block;
+  margin-bottom:30px;
   padding:5px 8px;
 
-  color:#fff;
+  color:var(--bs-white);
   border-radius:3px;
-  background-color:#acabab;
+  background-color:var(--bs-gray-600);
 
-  font-size:11px;
+  font-size:12px;
 }
 
 // popular
-.popular-text, .categories-text {
-  margin-bottom:5px;
-  padding-bottom:5px;
+.popular {
+  margin-bottom:30px;
+  .popular-text, .categories-text {
+    margin-bottom:5px;
+    padding-bottom:5px;
 
-  border-bottom:1px solid #f7f7f7;
-}
+    border-bottom:1px solid var(--bs-gray-300);
+  }
 
-.popular-text:last-child, .categories-text:last-child {
-  margin:0;
-  padding:0;
+  .popular-text:last-child, .categories-text:last-child {
+    margin:0;
+    padding:0;
 
-  border:none;
+    border:none;
+  }
 }
 
 // instagram
-.instagram .sidebar-contents {
-  display:flex;
-  flex-wrap:wrap;
-}
+.instagram {
+  margin-bottom:30px;
+  .sidebar-contents {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(112px, 45%));
+    justify-content:center;
+    max-width:380px;
+    margin:0 auto;
+    padding:10px;
 
-.instagram-box {
-  width:110px;
-  margin-bottom:10px;
-  padding-top:110px;
+    @include media-breakpoint-up(sm) {
+      grid-template-columns:repeat(auto-fit, minmax(112px, 112px));
+    }
+    gap:8px;
+  }
 
-  background-position:center;
-  background-size:cover;
-}
+  .instagram-box {
+    min-width:110px;
+    padding-top:110px;
 
-.instagram-box:nth-child(odd) {
-  margin-right:10px;
-}
+    background-position:center;
+    background-size:cover;
+  }
 
-.instagram-box:nth-child(1) {
-  background-image:url(img/airport.jpg);
-}
+  // .instagram-box:nth-child(odd) {
+  //   margin-right:10px;
+  // }
 
-.instagram-box:nth-child(2) {
-  background-image:url(img/japan.jpg);
-}
+  .instagram-box:nth-child(1) {
+    background-image:url(img/airport.jpg);
+  }
 
-.instagram-box:nth-child(3) {
-  background-image:url(img/snow.jpg);
-}
+  .instagram-box:nth-child(2) {
+    background-image:url(img/japan.jpg);
+  }
 
-.instagram-box:nth-child(4) {
-  background-image:url(img/japan2.jpg);
-}
+  .instagram-box:nth-child(3) {
+    background-image:url(img/snow.jpg);
+  }
 
-.instagram-box:nth-child(5) {
-  background-image:url(img/lake.jpg);
-}
+  .instagram-box:nth-child(4) {
+    background-image:url(img/japan2.jpg);
+  }
 
-.instagram-box:nth-child(6) {
-  background-image:url(img/road.jpg);
+  .instagram-box:nth-child(5) {
+    background-image:url(img/lake.jpg);
+  }
+
+  .instagram-box:nth-child(6) {
+    background-image:url(img/road.jpg);
+  }
 }

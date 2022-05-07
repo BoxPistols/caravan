@@ -10,7 +10,10 @@ body {
 
   color:var(--bs-gray-700);
 
-  font-family:"Inter", "Noto Sans JP", sans-serif;
+  body {
+    font-family:"Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  }
 }
 a {
   text-decoration:none;

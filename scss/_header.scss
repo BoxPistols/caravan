@@ -1,13 +1,16 @@
 // フォントデザイニング
 h1 >a, header, nav, h2, footer {
+  color:var(--bs-gray-800);
+
   font-family:"Quicksand", sans-serif;
 }
 
 h1 {
-  font-size:calc(1.25em + 1.5vw);
+  padding:1rem 0 .5rem;
+
+  font-size:calc(1.5em + 1.2vw);
 
   a {
-    // color:var(--text-color);
     color:var(--bs-gray-900);
   }
 }
@@ -16,15 +19,20 @@ h1 {
 .social i {
   display:inline-block;
   margin-left:20px;
+
+  font-size:1rem;
 }
 
 // Nav
-.nav-item {
-  padding:0 1rem;
+.nav {
+  .nav-item {
+    padding:0 1rem;
 
-  font-size:1.05rem;
+    font-size:1.1rem;
+    font-weight:700;
 
-  a:not(.active) {
-    color:currentColor;
+    a:not(.active) {
+      color:currentColor;
+    }
   }
 }
